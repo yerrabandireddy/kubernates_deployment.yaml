@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manoj-deployment
+  labels:
+    app: manoj-app
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: manoj-app
+
+
+  template:
+    metadata:
+      labels: 
+        app: manoj-app
+    spec:
+      containers:
+      - name: manoj-container
+        image: yerrabandireddy/jenkins_demo
+        ports:
+        - containerPort: 80  
+
